@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net">
+  <diagram name="University ERD" id="university-erd">
+    <mxGraphModel dx="1290" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- Entities -->
+        <mxCell id="student" value="STUDENT&#10;(Student_ID PK, Name, DOB, Dept_ID FK)" style="shape=rectangle;rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="80" width="180" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="department" value="DEPARTMENT&#10;(Dept_ID PK, Dept_Name)" style="shape=rectangle;rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="40" width="180" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="course" value="COURSE&#10;(Course_ID PK, Course_Name, Dept_ID FK)" style="shape=rectangle;rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="160" width="200" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="faculty" value="FACULTY&#10;(Faculty_ID PK, Name, Dept_ID FK)" style="shape=rectangle;rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="40" width="200" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="book" value="BOOK&#10;(Book_ID PK, Title, Author)" style="shape=rectangle;rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="300" width="180" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Relationships -->
+        <mxCell id="enrollment" value="ENROLLMENT&#10;(Student_ID FK, Course_ID FK, Grade)" style="shape=ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="180" width="200" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="teaches" value="TEACHES&#10;(Faculty_ID FK, Course_ID FK)" style="shape=ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="820" y="160" width="160" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="library" value="LIBRARY&#10;(Student_ID FK, Book_ID FK, Issue_Date, Return_Date)" style="shape=ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="300" width="260" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Edges -->
+        <mxCell id="edge1" style="endArrow=none;html=1;" edge="1" parent="1" source="student" target="department"/>
+        <mxCell id="edge2" style="endArrow=none;html=1;" edge="1" parent="1" source="course" target="department"/>
+        <mxCell id="edge3" style="endArrow=none;html=1;" edge="1" parent="1" source="enrollment" target="student"/>
+        <mxCell id="edge4" style="endArrow=none;html=1;" edge="1" parent="1" source="enrollment" target="course"/>
+        <mxCell id="edge5" style="endArrow=none;html=1;" edge="1" parent="1" source="faculty" target="department"/>
+        <mxCell id="edge6" style="endArrow=none;html=1;" edge="1" parent="1" source="teaches" target="faculty"/>
+        <mxCell id="edge7" style="endArrow=none;html=1;" edge="1" parent="1" source="teaches" target="course"/>
+        <mxCell id="edge8" style="endArrow=none;html=1;" edge="1" parent="1" source="library" target="student"/>
+        <mxCell id="edge9" style="endArrow=none;html=1;" edge="1" parent="1" source="library" target="book"/>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
